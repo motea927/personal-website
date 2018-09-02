@@ -16,12 +16,12 @@ window.onresize = () => {
 
 var openNav = () => {
     list.style.display = 'grid';
-    btnbg.setAttribute('xlink:href', '../img/sprites.svg#close');
+    btnbg.setAttribute('xlink:href', './img/sprites.svg#close');
 };
 
 var closeNav = () => {
     list.style.display = 'none';
-    btnbg.setAttribute('xlink:href', '../img/sprites.svg#menu');
+    btnbg.setAttribute('xlink:href', './img/sprites.svg#menu');
 }
 
 for ( let i=0;i<header__link.length;i++) {
