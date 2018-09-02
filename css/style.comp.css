@@ -1,0 +1,331 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  font-family: "Kosugi Maru", sans-serif; }
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; }
+  @media only screen and (max-width: 53.125em) {
+    html {
+      font-size: 50%; } }
+  @media only screen and (max-width: 41.25em) {
+    html {
+      font-size: 45%; } }
+
+.container {
+  display: grid;
+  grid-template-columns: [full-start] minmax(0.5rem, 1fr) repeat(8, [col-start] 1fr [col-end]) minmax(0.5rem, 1fr) [full-end];
+  background-image: url(../img/background-pattern.png);
+  background-size: 50px; }
+
+.heading--1,
+.heading--2,
+.heading--3,
+.heading--4,
+.heading--5 {
+  font-weight: 500;
+  line-height: 1;
+  margin-bottom: 2rem; }
+
+.heading--1 {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 6rem;
+  font-weight: 300; }
+
+.heading--2 {
+  font-size: 4rem; }
+
+.heading--3 {
+  font-size: 3rem; }
+
+.heading--4 {
+  font-size: 2.6rem; }
+
+.heading--5 {
+  font-size: 2.4rem; }
+
+.util-uppercase {
+  text-transform: uppercase; }
+
+p {
+  font-size: 2.1rem; }
+
+.header {
+  background-image: linear-gradient(to right bottom, rgba(25, 118, 210, 0.9), rgba(33, 150, 243, 0.9));
+  grid-column: full-start / full-end;
+  height: 70vh;
+  display: grid; }
+  .header canvas {
+    top: 0;
+    position: absolute;
+    z-index: 50; }
+  .header .nav {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: end;
+    z-index: 80;
+    position: relative; }
+    .header .nav__btn {
+      position: fixed;
+      display: none;
+      top: 2rem;
+      right: 2rem;
+      justify-items: center;
+      align-items: center;
+      background-color: #fff;
+      width: 6rem;
+      height: 6rem;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 100; }
+      @media only screen and (max-width: 41.25em) {
+        .header .nav__btn {
+          display: grid; } }
+      .header .nav__btn__img {
+        z-index: 500;
+        padding: 1rem;
+        width: 100%; }
+  .header__list {
+    list-style: none;
+    font-size: 2.5rem;
+    display: grid;
+    padding: 2rem;
+    grid-template-columns: repeat(4, max-content);
+    grid-column-gap: 2rem;
+    z-index: 80; }
+    @media only screen and (max-width: 53.125em) {
+      .header__list {
+        margin-top: 2rem;
+        grid-column-gap: 2rem; } }
+    @media only screen and (max-width: 41.25em) {
+      .header__list {
+        display: none;
+        margin-top: 0;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+        background-color: #2196f3;
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        justify-items: center;
+        align-items: center;
+        font-size: 6rem; } }
+  .header__link {
+    padding: 2rem;
+    cursor: pointer;
+    transition: all .2s; }
+    @media only screen and (max-width: 53.125em) {
+      .header__link {
+        padding: 2rem .8rem; } }
+  .header__link:link, .header__link:visited {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.9); }
+  .header__link:hover {
+    background-color: rgba(0, 0, 0, 0.05); }
+  .header__link:active {
+    background-color: rgba(0, 0, 0, 0.1); }
+  .header__text {
+    display: grid;
+    justify-content: end;
+    align-content: end;
+    padding: 6rem;
+    grid-column: 2 / -1; }
+    @media only screen and (max-width: 25em) {
+      .header__text {
+        padding: 2rem; } }
+    .header__text p {
+      color: rgba(255, 255, 255, 0.65);
+      font-size: 2rem;
+      display: grid;
+      justify-content: end; }
+  .header__img {
+    padding: 3rem;
+    width: 15rem;
+    height: 15rem;
+    border-radius: 50%;
+    justify-self: start; }
+    @media only screen and (max-width: 41.25em) {
+      .header__img {
+        padding: 2rem;
+        width: 10rem;
+        height: 10rem; } }
+
+.about {
+  grid-column: col-start 1 / col-end 8;
+  grid-column-gap: 6rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 4rem 8rem 8rem 8rem; }
+  @media only screen and (max-width: 41.25em) {
+    .about {
+      padding: 4rem 3rem 3rem 3rem; } }
+  @media only screen and (max-width: 25em) {
+    .about {
+      padding: 4rem 1rem 1rem 1rem; } }
+  .about__title {
+    grid-column: 1 / -1;
+    margin-bottom: 4rem;
+    justify-self: center; }
+  .about__img {
+    justify-self: end;
+    grid-column: 1 / 2;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../img/personal.jpg");
+    background-size: cover;
+    background-position: bottom;
+    width: 60%;
+    height: 100%; }
+    @media only screen and (max-width: 75em) {
+      .about__img {
+        justify-self: center;
+        width: 50vw;
+        height: 50vw;
+        grid-column: 1 / -1;
+        margin-bottom: 2rem; } }
+    .about__img > * {
+      width: 100%; }
+  .about__text {
+    justify-self: start;
+    padding: 2rem;
+    font-size: 2.1rem;
+    letter-spacing: .5px; }
+    @media only screen and (max-width: 75em) {
+      .about__text {
+        grid-column: 1 / -1; } }
+    .about__text p {
+      border-top: 1px dashed #646464;
+      padding: 2rem 0; }
+    .about__text h3 {
+      color: #1976d2; }
+
+.skills {
+  color: #fff;
+  grid-column: full-start / full-end;
+  background-image: linear-gradient(to bottom right, rgba(33, 150, 243, 0.7), rgba(0, 0, 0, 0.7)), url(../img/skills-bg.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  display: grid;
+  grid-template-columns: minmax(0.5rem, 1fr) repeat(6, 1fr) minmax(0.5rem, 1fr); }
+  @media only screen and (max-width: 41.25em) {
+    .skills {
+      padding: .5rem; } }
+  .skills__title {
+    margin-top: 4rem;
+    justify-self: center;
+    grid-column: 1 / -1;
+    line-height: 1; }
+  .skills__list {
+    margin-top: 3rem;
+    display: grid;
+    grid-row-gap: 3rem;
+    justify-items: center;
+    text-align: center;
+    grid-column: 2 / -2;
+    grid-template-columns: repeat(3, 1fr); }
+  .skills__icon {
+    height: 8rem;
+    width: 8rem; }
+    @media only screen and (max-width: 41.25em) {
+      .skills__icon {
+        height: 4rem;
+        width: 4rem; } }
+
+.edu {
+  padding: 6rem;
+  display: grid;
+  justify-items: center;
+  grid-column: col-start 1 / col-end 8; }
+  @media only screen and (max-width: 41.25em) {
+    .edu {
+      padding: 4rem 3rem 3rem 3rem; } }
+  @media only screen and (max-width: 25em) {
+    .edu {
+      padding: 4rem 1rem 1rem 1rem; } }
+  .edu h2 {
+    margin-bottom: 4rem; }
+  .edu__item {
+    padding: 0 5rem 5rem 5rem;
+    position: relative; }
+    @media only screen and (max-width: 41.25em) {
+      .edu__item {
+        padding: 0 2rem 2rem 5rem; } }
+    .edu__item--title {
+      color: #666; }
+    .edu__item--text {
+      padding: .5rem .5rem .5rem 0;
+      font-size: 2.1rem; }
+    .edu__item--time {
+      font-size: 2.2rem;
+      font-weight: 800; }
+    .edu__item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: .8rem;
+      bottom: auto;
+      right: auto;
+      height: 100%;
+      width: 5px;
+      background-color: #666; }
+    .edu__item::after {
+      content: '';
+      position: absolute;
+      top: .8rem;
+      left: -.7rem;
+      height: 2rem;
+      width: 2rem;
+      border-radius: 50%;
+      background-color: #2196f3; }
+
+.contact {
+  padding: 6rem;
+  color: rgba(255, 255, 255, 0.9);
+  grid-column: full-start / full-end;
+  background-color: #1976d2;
+  height: 50rem;
+  display: grid;
+  grid-template-columns: minmax(0.5rem, 1fr) repeat(6, 1fr) minmax(0.5rem, 1fr);
+  grid-row-gap: 3rem;
+  justify-items: center; }
+  @media only screen and (max-width: 75em) {
+    .contact {
+      height: 60rem; } }
+  @media only screen and (max-width: 41.25em) {
+    .contact {
+      padding: 6rem 3rem 3rem 3rem; } }
+  .contact__title, .contact__text {
+    grid-column: 1 / -1; }
+  .contact__btn {
+    display: block;
+    padding: 2rem;
+    align-self: center;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    font-size: 2.1rem; }
+  .contact__btn:hover, .contact__btn:active {
+    background-color: rgba(0, 0, 0, 0.05); }
+  .contact__email {
+    grid-column: 3 / 5; }
+    @media only screen and (max-width: 75em) {
+      .contact__email {
+        grid-column: 1 / -1; } }
+  .contact__github {
+    grid-column: 5 / 7; }
+    @media only screen and (max-width: 75em) {
+      .contact__github {
+        grid-column: 1 / -1; } }
+  .contact__icon {
+    width: 2rem;
+    height: 2rem;
+    margin-right: .5rem; }
+  .contact__copyright {
+    margin-top: 5rem;
+    grid-column: 1 / -1;
+    justify-content: center; }
+    @media only screen and (max-width: 75em) {
+      .contact__copyright {
+        margin-top: 2rem; } }

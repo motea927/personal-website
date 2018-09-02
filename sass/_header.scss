@@ -1,0 +1,140 @@
+.header {
+    background-image: linear-gradient(to right bottom, rgba($color-primary-dark, .9), rgba($color-primary, .9));
+    grid-column: full-start / full-end;
+    //grid-template-rows: repeat(2, 1fr);
+    //grid-template-columns: repeat(2, 1fr);
+    height: 70vh;
+    display: grid; 
+    canvas {
+        top: 0;
+        position: absolute;
+        z-index: 50;
+    }
+
+    .nav {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: end;
+        z-index: 80;
+        position: relative;
+
+        &__btn {
+            position: fixed;
+            display: none;
+            top: 2rem;
+            right: 2rem;
+            justify-items: center;
+            align-items: center;
+            background-color: #fff;
+            width: 6rem;
+            height: 6rem;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 100;
+
+            @media only screen and (max-width: $media-small){
+                display: grid;
+            }
+
+            &__img {
+                z-index: 500;
+                padding: 1rem;
+                width: 100%;
+            }
+            
+        }
+        
+    }
+
+    &__list {
+        list-style: none;
+        font-size: 2.5rem;
+        display: grid;
+        padding: 2rem;
+        grid-template-columns: repeat(4, max-content);
+        grid-column-gap: 2rem;
+        z-index: 80;
+
+        @media only screen and (max-width: $media-medium){
+            margin-top: 2rem;
+            grid-column-gap: 2rem;
+        }
+
+        @media only screen and (max-width: $media-small){
+            display: none;
+            margin-top: 0;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(4, 1fr);
+            background-color:$color-primary; 
+            position: fixed;
+            height: 100%;
+            width: 100%;
+            justify-items: center;
+            align-items: center;
+            font-size: 6rem;
+        }
+    }
+
+    &__link {
+        padding: 2rem;
+        cursor: pointer;
+        transition: all .2s;
+        
+        @media only screen and (max-width: $media-medium){
+            padding: 2rem .8rem;
+            
+        }
+    }
+
+    &__link:link,
+    &__link:visited {
+        text-decoration: none;
+        color: rgba(#fff, .9);
+    }
+
+    &__link:hover {
+        background-color: rgba(#000, .05);
+    }
+
+    &__link:active {
+        background-color: rgba(#000, .1);
+    }
+
+
+    
+
+    &__text {
+        display: grid;
+        justify-content: end;
+        align-content: end;
+        padding: 6rem;
+        grid-column: 2 / -1;
+
+        @media only screen and (max-width: $media-smallest){
+            padding: 2rem;
+        }
+
+        & p {
+            color: rgba(#fff, .65);
+            font-size: 2rem;
+            display: grid;
+            justify-content: end;
+        }
+    }
+
+    &__img {
+        padding: 3rem;
+        width: 15rem;
+        height: 15rem;
+        border-radius: 50%;
+        justify-self: start;
+
+        @media only screen and (max-width: $media-small){
+            padding: 2rem;
+            width: 10rem;
+            height: 10rem;
+        }
+    }
+
+    
+}
